@@ -1,0 +1,12 @@
+#!/bin/sh
+@echo off
+title passwords 
+set name = Default  
+//netsh wlan show profile > wifi_list.txt
+netsh wlan show profile
+set wifi= Default
+echo Enter wifi name:
+set /p wifi=
+echo wifi name is %wifi%
+netsh wlan show profile %wifi% key = clear
+pause
